@@ -10,8 +10,12 @@ which is used to create references in your storage bucket*/
 // Create a storage reference from our storage service
 //var storageRef = storage.ref();//points to root reference
 
-router.get('/', function(req, res){
+router.get('/', (req, res){
     res.render('home');
+});
+
+router.get('/3dMap', (req, res){
+    res.render('views/3dMap');
 });
 
 router.post('/view3D', function(req, res){

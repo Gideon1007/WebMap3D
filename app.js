@@ -21,13 +21,21 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 //set the 'ejs' view engine
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.resolve(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
 
 //set static folder
 
-app.use('/', home);
+//app.use('/', home);
+
+//app.get('/', function(req, res){
+  //  res.render('home');
+   //});
+
+//app.get('/3dMap', function(req, res){
+  //  res.render('3dMap');
+//    });
 
 //set port to listen
 app.set('port', (process.env.PORT || 4000));

@@ -1,5 +1,6 @@
 <html>
     <head>
+         
         <meta charset="utf-8">
         <title>Map_3D</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -31,6 +32,19 @@
         <div id="warning" style="display: block; margin-top: 20px; color: red; visibility: hidden;">
             <b>"This is not a valid file..."</b>
         </div>
+        
+        <form action="/3dMap" method="get">
+        <button>View 3D</button>
+        </form>
+        
+        <!--<li><% include ./3dMap %>View 3D</li>-->
+
+       <!--<div>
+        <button onclick=""=>View 3D</button>
+        </div>-->
+
+          
+                 
         <script>
             var firebase_config = {
             apiKey: "AIzaSyCmQFEY-RlY2Z6XTFjsuTwVXjD8siCgZbw",
@@ -44,7 +58,7 @@
 
             var uploader = document.getElementById('uploader');
             var fileButton = document.getElementById('fileButton');
-
+           
             //listen for file selection
             fileButton.addEventListener('change', function(e) {
                 //get file
@@ -81,6 +95,9 @@
                         var percentage = (snapshot.bytesTransferred/
                         snapshot.totalBytes)*100;
                         uploader.value = percentage;
+                        if(percentage == 100){
+                            
+                        }
                     },
 
                     function error(err){
